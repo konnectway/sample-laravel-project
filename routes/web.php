@@ -2,6 +2,9 @@
 
 use Illuminate\Support\Facades\Route;
 
+use App\Http\Controllers\UserController;
+use App\Http\Controllers\CountryController;
+
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -16,3 +19,8 @@ use Illuminate\Support\Facades\Route;
 Route::get('/', function () {
     return view('welcome');
 });
+
+Route::resource('user'    , UserController::class);
+Route::resource('country' , CountryController::class);
+
+Route::get('cities/{country_id}', [CountryController::class, 'citiesList' ])->name('cities.list');

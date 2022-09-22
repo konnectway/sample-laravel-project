@@ -16,7 +16,11 @@ class UserFactory extends Factory
     {
         return [
             'name' => $this->faker->name(),
+            'lastname' => $this->faker->lastname(),
+            'birthday' =>  $this->faker->dateTimeThisCentury->format('Y-m-d'),
+            //'birthday' =>  $this->faker->dateTimeBetween('1970-01-01', '2010-12-31')->format('Y-m-d'),
             'email' => $this->faker->unique()->safeEmail(),
+            'active' => $this->faker->boolean(),
             'email_verified_at' => now(),
             'password' => '$2y$10$92IXUNpkjO0rOQ5byMi.Ye4oKoEa3Ro9llC/.og/at2.uheWG/igi', // password
             'remember_token' => Str::random(10),
