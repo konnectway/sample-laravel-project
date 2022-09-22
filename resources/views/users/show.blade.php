@@ -14,7 +14,7 @@
 		<div class="col-xs-12 col-sm-12 col-md-12">
 			<div class="form-group">
 				<strong>Name:</strong>
-				{{ $user->name }}
+				{{ ucwords($user->name . ' ' . $user->lastname) }}
 			</div>
 		</div>
 		<div class="col-xs-12 col-sm-12 col-md-12">

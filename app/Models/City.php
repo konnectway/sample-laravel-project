@@ -8,4 +8,15 @@ use Illuminate\Database\Eloquent\Model;
 class City extends Model
 {
     use HasFactory;
+
+
+    public function scopeActive($q)
+    {
+        return $q->where('active', true);
+    }
+
+    public function scopeByCountry($q, $countryId)
+    {
+        return $q->where('country_id', $countryId);
+    }
 }

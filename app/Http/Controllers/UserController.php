@@ -18,6 +18,19 @@ class UserController extends Controller
         return view('users.list', compact('users'));
     }
 
+
+    public function getFullUser(){
+        $user = User::find($id);
+
+        $data['name'] = $user->name;
+        $data['mail'] = $user->mail;
+        $data['countryName'] = $user->country->name;
+        $data['address'] = $user->address->toArray();
+        $data['posts'] = $user->posts->toArray();
+
+        return $data;
+    }
+
     public function show($id)
     {
         $user = User::find($id);

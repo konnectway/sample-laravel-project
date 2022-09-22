@@ -16,6 +16,9 @@ class CountryController extends Controller
 
     }
 
+    /**
+     * @param Int $countryId
+     */
     public function citiesList($countryId)
     {
 
