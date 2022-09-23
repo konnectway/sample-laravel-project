@@ -19,8 +19,8 @@ class UserController extends Controller
     }
 
 
-    public function getFullUser(){
-        $user = User::find($id);
+    public function getFullUser($userId){
+        $user = User::find($userId);
 
         $data['name'] = $user->name;
         $data['mail'] = $user->mail;
